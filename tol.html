@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Title</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pinyon+Script&display=swap');
+        :root{
+           --thrme-color: #2fffff;
+           --base-color:#fff;
+           --theme-color:#2fffff;
+           --bg-dark:#2b2b2b;
+           --card-bg:rgba(255,255,255,0.04);
+           --border:rgba(255,255,255,0.08);
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body{
+            font-family: "Noto Sans", sans-serif;
+            background: rgb(43, 43, 43);
+            overflow-x: hidden;
+            user-select: none;
+        }
+        nav{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            width: 95vw;
+            height: 10vh;
+            user-select: none;
+        }
+        .container{
+            width: 90%;
+            height: 8vh;
+            display: flex;
+            justify-content: center;
+            border-radius: 5px;
+        }
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            background: transparent;
+            border-radius: 5px;
+        }
+        .logo a{
+            font-family: sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            background: linear-gradient(120deg, var(--thrme-color), var(--base-color), var(--base-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition-duration: 0.5s;
+        }
+        .logo a:hover{
+            background: linear-gradient(120deg, var(--thrme-color),var(--thrme-color), var(--base-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .navbar .pages{
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .pages a{
+            position: relative;
+            color: var(--base-color);
+            text-decoration: none;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 900;
+            font-size: 1.2rem;
+            transition-duration: 0.5s;
+            letter-spacing: 1.5px;
+        }
+        .pages a:hover{
+            color: var(--thrme-color);
+        }
+        .pages a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--thrme-color);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s ease;
+}
+
+.pages a:hover::after {
+    transform: scaleX(1);
+}
+    /* ===== Header ===== */
+    .articles-header{
+      text-align:center;
+      padding:6rem 1.5rem 4rem;
+    }
+
+    .articles-header h1{
+      font-size:3rem;
+      background:linear-gradient(120deg,var(--theme-color),var(--base-color)) ;
+      -webkit-background-clip:text;
+      background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .articles-header p{
+      max-width:700px;
+      margin:1.5rem auto 0;
+      font-size:1.15rem;
+      color:#cfcfcf;
+      line-height:1.7;
+    }
+
+    /* ===== Articles Grid ===== */
+    .articles{
+      width:100%;
+      padding:3rem 1.5rem 6rem;
+      display:flex;
+      justify-content:center;
+    }
+
+    .articles-grid{
+      width:100%;
+      max-width:1200px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:2rem;
+    }
+
+    .article-card{background:
+    linear-gradient(
+        to bottom,
+      transparent 5%,
+      #000 80%
+    ),
+    url('https://i.suar.me/gPQv3/l');
+    background-size: cover;
+    background-position: top;
+    -webkit-mask-image: linear-gradient(to bottom, black 100%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 100%, transparent 100%);
+      background-size: cover;
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:2rem;
+      display:flex;
+      flex-direction:column;
+      transition:transform .4s ease, box-shadow .4s ease;
+      cursor:pointer;
+      position: relative; 
+    }
+
+    .article-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 0 30px rgba(47,255,255,0.15);
+    }
+    .article-card span{
+        font-size: 3rem;position: absolute;   
+        bottom: 2px;
+        right: 2px;
+        padding: 5px 10px;
+        color: var(--base-color);
+        font-weight: 700;
+    }
+
+    .article-icon{
+      font-size:3rem;
+      margin-bottom:1.2rem;
+      background:linear-gradient(120deg,var(--theme-color),var(--base-color));
+      -webkit-background-clip:text;
+      background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .article-card h2{
+      font-size:1.5rem;
+      margin-bottom:1rem;
+      color: var(--base-color);
+    }
+
+    .article-card p{
+      font-size:1rem;
+      color:#cfd8ff;
+      line-height:1.7;
+      flex-grow:1;
+    }
+
+    .read-more{
+      margin-top:1.5rem;
+      text-decoration:none;
+      font-weight:600;
+      color:var(--theme-color);
+      display:inline-flex;
+      align-items:center;
+      gap:.4rem;
+    }
+
+    .read-more i{
+      transition:transform .3s ease;
+    }
+
+    .read-more:hover i{
+      transform:translateX(5px);
+    }
+
+@media (max-width: 1200px){
+    .navbar .pages{
+            width: 80%;
+        }
+}
+@media (max-width: 768px) {
+    html, body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+    .container {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container .navbar {
+        width: 90%;
+        display: inline;
+    }
+    .container .navbar .logo{
+        display: flex;
+        justify-content: center;
+        height: 6vh;
+    }
+    .container .navbar .pages {
+        width: 90%;
+        font-size: 1em;
+    }
+    .container .navbar .pages  a{
+        font-size: 1em;
+    }
+
+
+    
+}
+ /* ===== Responsive ===== */
+    @media(max-width:768px){
+      .articles-header h1{
+        font-size:2.2rem;
+      }
+
+      .articles-header p{
+        font-size:1.05rem;
+      }
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="navbar">
+            <div class="logo"><a href="https://networks0.github.io/"><span>netw</span>orks</a></div>
+            <div class="pages">
+                <a href="Articles.html">Articles</a>
+                <a href="About.html">About</a>
+                <a href="Contact.html">Contact</a>
+                <a href="Privacy Policy.html">Privacy Policy</a>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+     <section class="articles-header">
+    <h1>Articles</h1>
+    <p>
+      Explore professional articles about networking and communication technologies.
+      Learn concepts, protocols, and real-world implementations step by step.
+    </p>
+  </section>
+
+  <!-- Articles -->
+  <section class="articles">
+    <div class="articles-grid">
+
+      <div class="article-card">
+        <span>#1</span>
+        <i class='bx bx-network-chart article-icon'></i>
+        <h2>Introduction to Computer Networks</h2>
+        <p>
+          Learn the fundamentals of computer networks, including types, topologies,
+          and basic communication principles.
+        </p>
+        <a href="#" class="read-more">
+          Read article <i class='bx bx-right-arrow-alt'></i>
+        </a>
+      </div>
+
+      <div class="article-card">
+        <span>#2</span>
+        <i class='bx bx-transfer-alt article-icon'></i>
+        <h2>How Data Transmission Works</h2>
+        <p>
+          Understand how data moves across networks using wired and wireless
+          communication technologies.
+        </p>
+        <a href="#" class="read-more">
+          Read article <i class='bx bx-right-arrow-alt'></i>
+        </a>
+      </div>
+
+      <div class="article-card">
+        <span>#3</span>
+        <i class='bx bx-shield-quarter article-icon'></i>
+        <h2>Network Security Basics</h2>
+        <p>
+          Discover essential security concepts, common threats,
+          and methods to protect network infrastructure.
+        </p>
+        <a href="#" class="read-more">
+          Read article <i class='bx bx-right-arrow-alt'></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+  <input id="code" placeholder="Enter code">
+<button onclick="send()">Submit</button>
+<p id="result"></p>
+
+<script>
+async function send() {
+  const code = document.getElementById("code").value.trim();
+
+  try {
+    const res = await fetch(
+      "https://orange-term-f7fb.taki84123.workers.dev/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ code })
+      }
+    );
+
+    const data = await res.json();
+    document.getElementById("result").textContent = data.message;
+  } catch (e) {
+    document.getElementById("result").textContent = "Connection error";
+    console.error(e);
+  }
+}
+</script>
+
+
+
+
+
+
+</body>
+</html>
