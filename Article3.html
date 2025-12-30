@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" sizes="32x32" href="https://i.suar.me/vpM15/m">
+    <title>networks|Article#3</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pinyon+Script&display=swap');
+        :root{
+           --thrme-color: #2fffff;
+           --base-color:#fff;
+           --theme-color:#2fffff;
+           --bg-dark:#2b2b2b;
+           --card-bg:rgba(255, 255, 255, 0.04);
+           --border:rgba(255, 251, 251, 0.08);
+            --primary: #2fffff;
+      --secondary: #00c6c6;
+      --accent: #568cff;
+      --bg: #0c2843;
+      --text: #ffffff;
+    }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body{
+            font-family: "Noto Sans", sans-serif;
+            background: rgb(43, 43, 43);
+            overflow-x: hidden;
+        }
+        nav{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            width: 95vw;
+            height: 10vh;
+            user-select: none;
+        }
+        .container{
+            width: 90%;
+            height: 8vh;
+            display: flex;
+            justify-content: center;
+            border-radius: 5px;
+        }
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            background: transparent;
+            border-radius: 5px;
+        }
+        .logo a{
+            font-family: sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            background: linear-gradient(120deg, var(--thrme-color), var(--base-color), var(--base-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition-duration: 0.5s;
+        }
+        .logo a:hover{
+            background: linear-gradient(120deg, var(--thrme-color),var(--thrme-color), var(--base-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .navbar .pages{
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .pages a{
+            position: relative;
+            color: var(--base-color);
+            text-decoration: none;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 900;
+            font-size: 1.2rem;
+            transition-duration: 0.5s;
+            letter-spacing: 1.5px;
+        }
+        .pages a:hover{
+            color: var(--thrme-color);
+        }
+        .pages a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--thrme-color);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s ease;
+}
+
+.pages a:hover::after {
+    transform: scaleX(1);
+}
+.container1 {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      color: var(--text);
+      user-select: none;
+    }
+
+    article {
+      background: var(--bg);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    h2 {
+      margin-top: 40px;
+      margin-bottom: 10px;
+      color: var(--secondary);
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
+
+    h3 {
+      margin-top: 25px;
+      color: var(--accent);
+    }
+
+    p {
+      margin: 15px 0;
+      font-size: 1rem;
+    }
+
+    ul {
+      margin: 15px 0 15px 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #e5e7eb;
+      font-size: 0.9rem;
+      color: var(--base-color);
+    }
+
+
+
+@media (max-width: 1200px){
+  article {
+        padding: 25px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+    .navbar .pages{
+            width: 80%;
+        }
+}
+@media (max-width: 768px) {
+    html, body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+    .container {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container .navbar {
+        width: 90%;
+        display: inline;
+    }
+    .container .navbar .logo{
+        display: flex;
+        justify-content: center;
+        height: 6vh;
+    }
+    .container .navbar .pages {
+        width: 90%;
+        font-size: 1em;
+    }
+    .container .navbar .pages  a{
+        font-size: 1em;
+    }
+
+
+    
+}
+ /* ===== Responsive ===== */
+    @media(max-width:768px){
+      .articles-header h1{
+        font-size:2.2rem;
+      }
+
+      .articles-header p{
+        font-size:1.05rem;
+      }
+    }
+    img{
+      position: relative;
+      max-width: 90vw;
+      width: 90%;
+      margin-left: 5%;
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="navbar">
+            <div class="logo"><a href="https://networks0.github.io/"><span>netw</span>orks</a></div>
+            <div class="pages">
+                <a href="Articles.html">Articles</a>
+                <a href="About.html">About</a>
+                <a href="Contact.html">Contact</a>
+                <a href="Privacy Policy.html">Privacy Policy</a>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+<div class="container1">
+  <article>
+
+    <h1>Network Topologies</h1>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/NetworkDecentral.svg" alt="Network Topologies Diagram">
+
+    <p>
+      Network topology refers to the arrangement of devices, nodes, and connections
+      within a computer network. It defines how computers, servers, switches, and other
+      networking devices are interconnected and how data flows between them. Understanding
+      network topologies is essential for designing efficient, scalable, and reliable
+      networks in both small and large environments.
+    </p>
+
+    <h2>What Is Network Topology?</h2>
+    <p>
+      Network topology can be classified as either physical or logical. Physical topology
+      describes the actual layout of cables and hardware devices, while logical topology
+      explains how data moves across the network regardless of its physical design.
+      Both perspectives are important when planning, managing, and troubleshooting
+      network infrastructures.
+    </p>
+
+    <h2>Why Network Topology Is Important</h2>
+    <p>
+      Choosing the right network topology directly impacts network performance, fault
+      tolerance, scalability, and cost. A well-designed topology can reduce downtime,
+      improve data transmission speed, and simplify maintenance. Poor topology choices,
+      on the other hand, may result in bottlenecks, security weaknesses, and frequent failures.
+    </p>
+
+    <ul>
+      <li><strong>Performance:</strong> Determines how efficiently data is transmitted.</li>
+      <li><strong>Reliability:</strong> Affects how the network handles device failures.</li>
+      <li><strong>Scalability:</strong> Defines how easily new devices can be added.</li>
+      <li><strong>Maintenance:</strong> Influences troubleshooting and management effort.</li>
+    </ul>
+
+    <h2>Common Types of Network Topologies</h2>
+
+    <h3>Star Topology</h3>
+    <p>
+      In a star topology, all devices are connected to a central hub or switch.
+      This design is widely used in modern Ethernet networks because it is easy to
+      install, manage, and expand. If one device fails, it does not affect the rest
+      of the network. However, failure of the central device can bring down the entire network.
+    </p>
+
+    <h3>Bus Topology</h3>
+    <p>
+      Bus topology uses a single main cable to connect all devices. Data travels
+      along the cable and is received by all nodes. While this topology is simple
+      and cost-effective, it suffers from performance issues as the number of devices
+      increases. A failure in the main cable can also cause total network failure.
+    </p>
+
+    <h3>Ring Topology</h3>
+    <p>
+      In a ring topology, devices are connected in a circular fashion, with data
+      traveling in one direction or both directions depending on the configuration.
+      Each device receives data and forwards it to the next. Although ring topology
+      can provide predictable performance, a single device or cable failure can disrupt
+      the entire network unless redundancy is implemented.
+    </p>
+
+    <h3>Mesh Topology</h3>
+    <p>
+      Mesh topology connects devices with multiple redundant paths. This design
+      provides high reliability and fault tolerance, making it ideal for critical
+      systems and large-scale networks. However, mesh networks are complex and expensive
+      to implement due to the large number of connections required.
+    </p>
+
+    <h2>Hybrid Network Topologies</h2>
+    <p>
+      Hybrid topology combines two or more different topologies to take advantage
+      of their strengths. For example, a large enterprise network may use a star
+      topology within departments and connect them using a mesh or ring structure.
+      Hybrid designs offer flexibility, scalability, and improved performance.
+    </p>
+
+    <img src="https://media.easy-peasy.ai/27feb2bb-aeb4-4a83-9fb6-8f3f2a15885e/2185ec03-3b17-45bc-8455-8e80cf68c15c.png" alt="Types of Network Topologies">
+
+    <h2>Choosing the Right Network Topology</h2>
+    <p>
+      Selecting the appropriate network topology depends on factors such as network
+      size, budget, performance requirements, and future growth. Small networks may
+      benefit from simple designs, while large organizations often require hybrid or
+      mesh topologies to ensure reliability and scalability.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+      Network topology is a foundational concept in computer networking that shapes
+      how data flows, how networks scale, and how resilient they are to failures.
+      By understanding the advantages and limitations of each topology type,
+      network designers and administrators can build robust and efficient network
+      infrastructures that meet modern communication demands.
+    </p>
+
+    <footer>
+      <p>Article published on Network Fundamentals.</p>
+    </footer>
+
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
