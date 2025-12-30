@@ -305,8 +305,8 @@
 <div class="article-card">
   <span>#2</span>
   <i class='bx bx-category article-icon'></i>
-  <h2>Types of Computer Networks</h2>
-  <p>Networks are classified based on size and coverage.</p>
+  <h2>How Data Transmission Works</h2>
+  <p>Data transmission is the process of transferring data.</p>
   <a href="Article2.html" class="read-more">Read article <i class='bx bx-right-arrow-alt'></i></a>
 </div>
 
