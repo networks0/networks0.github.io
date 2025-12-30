@@ -6,7 +6,7 @@
      <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" sizes="32x32" href="https://i.suar.me/vpM15/m">
-    <title>networks|Article#10</title>
+    <title>networks|Article#12</title>
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pinyon+Script&display=swap');
@@ -247,108 +247,101 @@
 <div class="container1">
   <article>
 
-    <h1>The OSI Model Explained</h1>
+    <h1>Wired vs Wireless Networks</h1>
 
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/Uk%C5%82ad_warstw_typu_zaw%C3%B3r_spinowy.svg" alt="OSI Model Layers Diagram">
+    <img src="https://www.ctrl.blog/media/image/google-chromecasts-ethernet-adapter.jpeg" alt="Wired vs Wireless Networks">
 
     <p>
-      The OSI (Open Systems Interconnection) model is a conceptual framework that standardizes
-      how data is transmitted across a network. It divides network communication into seven
-      distinct layers, each with a specific role. This layered approach helps network engineers,
-      developers, and administrators design, understand, and troubleshoot network systems more
-      effectively.
+      Wired and wireless networks are two fundamental types of computer networks used
+      to connect devices for communication and data exchange. Both have unique advantages
+      and are used in different scenarios depending on speed, security, flexibility, and
+      scalability requirements. Understanding the differences between wired and wireless
+      networks is crucial for designing efficient and reliable network infrastructures.
     </p>
 
-    <h2>What Is the OSI Model?</h2>
+    <h2>What Are Wired Networks?</h2>
     <p>
-      The OSI model was developed by the International Organization for Standardization (ISO)
-      to provide a universal language for computer networking. Instead of focusing on specific
-      technologies, it defines how data should move from one device to another, regardless of
-      hardware or software differences.
+      Wired networks use physical cables such as Ethernet or fiber optic cables to connect
+      devices. Data travels over these cables as electrical signals or light pulses. Wired
+      networks are commonly found in offices, data centers, and environments where speed
+      and reliability are critical.
     </p>
 
-    <h2>Why the OSI Model Is Important</h2>
-    <p>
-      By separating network communication into layers, the OSI model simplifies complex
-      interactions. Each layer can be developed and modified independently, which improves
-      compatibility and innovation across networking technologies.
-    </p>
-
+    <h2>Advantages of Wired Networks</h2>
     <ul>
-      <li><strong>Standardization:</strong> Ensures global interoperability.</li>
-      <li><strong>Troubleshooting:</strong> Helps isolate network problems efficiently.</li>
-      <li><strong>Modular Design:</strong> Allows independent layer development.</li>
-      <li><strong>Education:</strong> Provides a clear structure for learning networking.</li>
+      <li><strong>High Speed:</strong> Offers faster data transmission compared to wireless.</li>
+      <li><strong>Reliability:</strong> Stable connections with minimal interference.</li>
+      <li><strong>Security:</strong> Physical connections reduce unauthorized access risks.</li>
+      <li><strong>Low Latency:</strong> Ideal for gaming, video conferencing, and large file transfers.</li>
     </ul>
 
-    <h2>The Seven Layers of the OSI Model</h2>
-
-    <h3>1. Physical Layer</h3>
+    <h2>What Are Wireless Networks?</h2>
     <p>
-      The Physical layer is responsible for transmitting raw bits over a physical medium.
-      It defines cables, connectors, voltages, and data rates. Examples include Ethernet cables
-      and fiber optic links.
+      Wireless networks use radio waves, Wi-Fi, or other wireless technologies to connect
+      devices without physical cables. Wireless networks provide mobility, convenience,
+      and easy deployment, making them ideal for homes, offices, and public spaces.
     </p>
 
-    <h3>2. Data Link Layer</h3>
+    <h2>Advantages of Wireless Networks</h2>
+    <ul>
+      <li><strong>Flexibility:</strong> Users can connect anywhere within coverage range.</li>
+      <li><strong>Scalability:</strong> Easy to add new devices without additional cabling.</li>
+      <li><strong>Mobility:</strong> Supports laptops, smartphones, tablets, and IoT devices.</li>
+      <li><strong>Cost-Effective:</strong> Reduces expenses for cable installation.</li>
+    </ul>
+
+    <h2>Comparing Wired and Wireless Networks</h2>
     <p>
-      This layer manages node-to-node communication and error detection. It organizes bits
-      into frames and handles MAC addresses. Switches primarily operate at this layer.
+      The choice between wired and wireless networks depends on the specific requirements
+      of an environment. Wired networks excel in speed, security, and reliability, while
+      wireless networks provide flexibility, ease of deployment, and mobility.
     </p>
 
-    <h3>3. Network Layer</h3>
-    <p>
-      The Network layer determines how data packets are routed across networks. It uses
-      logical addressing such as IP addresses and is responsible for path selection.
-    </p>
+    <table>
+      <tr>
+        <th>Feature</th>
+        <th>Wired</th>
+        <th>Wireless</th>
+      </tr>
+      <tr>
+        <td>Speed</td>
+        <td>High</td>
+        <td>Moderate</td>
+      </tr>
+      <tr>
+        <td>Reliability</td>
+        <td>Very Reliable</td>
+        <td>Subject to interference</td>
+      </tr>
+      <tr>
+        <td>Mobility</td>
+        <td>Limited</td>
+        <td>High</td>
+      </tr>
+      <tr>
+        <td>Security</td>
+        <td>High</td>
+        <td>Needs encryption</td>
+      </tr>
+    </table>
 
-    <h3>4. Transport Layer</h3>
-    <p>
-      This layer ensures reliable data delivery between devices. It manages flow control,
-      error recovery, and segmentation. TCP and UDP operate at this level.
-    </p>
-
-    <h3>5. Session Layer</h3>
-    <p>
-      The Session layer establishes, manages, and terminates communication sessions between
-      applications. It ensures that data exchanges remain synchronized.
-    </p>
-
-    <h3>6. Presentation Layer</h3>
-    <p>
-      This layer handles data formatting, encryption, and compression. It ensures that data
-      sent by one system can be correctly interpreted by another.
-    </p>
-
-    <h3>7. Application Layer</h3>
-    <p>
-      The Application layer provides network services directly to end users. Protocols such
-      as HTTP, FTP, SMTP, and DNS operate at this layer.
-    </p>
-
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/OSIandTCP.gif" alt="OSI vs TCP IP Model">
-
-    <h2>OSI Model vs TCP/IP Model</h2>
-    <p>
-      While the OSI model has seven layers, the TCP/IP model simplifies networking into four
-      layers. The OSI model is primarily used for education and conceptual understanding,
-      whereas TCP/IP is the practical model used on the internet today.
-    </p>
+    <img src="https://exaly.com/journal/32480/impact-factor/graph.svg" alt="Network Comparison">
 
     <h2>Conclusion</h2>
     <p>
-      The OSI model remains a foundational concept in computer networking. It provides a
-      structured way to understand how data moves across networks and how different
-      technologies interact. Mastering the OSI model is essential for diagnosing network
-      issues and building reliable communication systems.
+      Both wired and wireless networks play vital roles in modern networking. Wired networks
+      are ideal for high-performance, secure, and stable environments, while wireless networks
+      excel in flexibility and mobility. Often, organizations use a hybrid approach, combining
+      both types to optimize connectivity and meet diverse requirements.
     </p>
 
     <footer>
-      <p>Article published on Network Architecture Fundamentals.</p>
+      <p>Article published on Network Fundamentals.</p>
     </footer>
 
   </article>
 </div>
+
 
 
 
