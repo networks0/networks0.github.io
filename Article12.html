@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" sizes="32x32" href="https://i.suar.me/vpM15/m">
+    <title>networks|Article#12</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pinyon+Script&display=swap');
+        :root{
+           --thrme-color: #2fffff;
+           --base-color:#fff;
+           --theme-color:#2fffff;
+           --bg-dark:#2b2b2b;
+           --card-bg:rgba(255, 255, 255, 0.04);
+           --border:rgba(255, 251, 251, 0.08);
+            --primary: #2fffff;
+      --secondary: #00c6c6;
+      --accent: #568cff;
+      --bg: #0c2843;
+      --text: #ffffff;
+    }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body{
+            font-family: "Noto Sans", sans-serif;
+            background: rgb(43, 43, 43);
+            overflow-x: hidden;
+        }
+        nav{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            width: 95vw;
+            height: 10vh;
+            user-select: none;
+        }
+        .container{
+            width: 90%;
+            height: 8vh;
+            display: flex;
+            justify-content: center;
+            border-radius: 5px;
+        }
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            background: transparent;
+            border-radius: 5px;
+        }
+        .logo a{
+            font-family: sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            background: linear-gradient(120deg, var(--thrme-color), var(--base-color), var(--base-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition-duration: 0.5s;
+        }
+        .logo a:hover{
+            background: linear-gradient(120deg, var(--thrme-color),var(--thrme-color), var(--base-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .navbar .pages{
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .pages a{
+            position: relative;
+            color: var(--base-color);
+            text-decoration: none;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 900;
+            font-size: 1.2rem;
+            transition-duration: 0.5s;
+            letter-spacing: 1.5px;
+        }
+        .pages a:hover{
+            color: var(--thrme-color);
+        }
+        .pages a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--thrme-color);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s ease;
+}
+
+.pages a:hover::after {
+    transform: scaleX(1);
+}
+.container1 {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      color: var(--text);
+      user-select: none;
+    }
+
+    article {
+      background: var(--bg);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    h2 {
+      margin-top: 40px;
+      margin-bottom: 10px;
+      color: var(--secondary);
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
+
+    h3 {
+      margin-top: 25px;
+      color: var(--accent);
+    }
+
+    p {
+      margin: 15px 0;
+      font-size: 1rem;
+    }
+
+    ul {
+      margin: 15px 0 15px 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #e5e7eb;
+      font-size: 0.9rem;
+      color: var(--base-color);
+    }
+
+
+
+@media (max-width: 1200px){
+  article {
+        padding: 25px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+    .navbar .pages{
+            width: 80%;
+        }
+}
+@media (max-width: 768px) {
+    html, body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+    .container {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container .navbar {
+        width: 90%;
+        display: inline;
+    }
+    .container .navbar .logo{
+        display: flex;
+        justify-content: center;
+        height: 6vh;
+    }
+    .container .navbar .pages {
+        width: 90%;
+        font-size: 1em;
+    }
+    .container .navbar .pages  a{
+        font-size: 1em;
+    }
+
+
+    
+}
+ /* ===== Responsive ===== */
+    @media(max-width:768px){
+      .articles-header h1{
+        font-size:2.2rem;
+      }
+
+      .articles-header p{
+        font-size:1.05rem;
+      }
+    }
+    img{
+      position: relative;
+      max-width: 90vw;
+      width: 90%;
+      margin-left: 5%;
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="navbar">
+            <div class="logo"><a href="https://networks0.github.io/"><span>netw</span>orks</a></div>
+            <div class="pages">
+                <a href="Articles.html">Articles</a>
+                <a href="About.html">About</a>
+                <a href="Contact.html">Contact</a>
+                <a href="Privacy Policy.html">Privacy Policy</a>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+<div class="container1">
+  <article>
+
+    <h1>Firewalls Explained</h1>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Firewall_br_03.jpg" alt="Firewall Diagram">
+
+    <p>
+      Firewalls are critical network security devices that monitor, filter, and control
+      incoming and outgoing traffic between networks. They act as a barrier between trusted
+      internal networks and untrusted external networks such as the internet, preventing
+      unauthorized access and protecting sensitive information.
+    </p>
+
+    <h2>What Is a Firewall?</h2>
+    <p>
+      A firewall is a hardware device, software program, or a combination of both that
+      enforces network security rules. It inspects data packets, decides whether to
+      allow or block them based on predefined policies, and logs traffic for monitoring
+      and analysis.
+    </p>
+
+    <h2>Why Firewalls Are Important</h2>
+    <p>
+      Firewalls are the first line of defense against cyber threats. They prevent unauthorized
+      users from accessing internal networks, block malicious traffic, and help maintain
+      compliance with regulatory standards. Without firewalls, networks are vulnerable
+      to hacking, malware, and data breaches.
+    </p>
+
+    <ul>
+      <li><strong>Traffic Control:</strong> Monitors and filters network traffic.</li>
+      <li><strong>Threat Prevention:</strong> Blocks unauthorized access and malicious attacks.</li>
+      <li><strong>Policy Enforcement:</strong> Ensures compliance with security rules.</li>
+      <li><strong>Logging and Monitoring:</strong> Tracks traffic for audits and analysis.</li>
+    </ul>
+
+    <h2>Types of Firewalls</h2>
+
+    <h3>Hardware Firewalls</h3>
+    <p>
+      Hardware firewalls are physical devices installed between a network and the internet.
+      They provide robust protection for multiple devices within a network and often
+      include features like VPN support and intrusion prevention.
+    </p>
+
+    <h3>Software Firewalls</h3>
+    <p>
+      Software firewalls are installed on individual devices and control traffic entering
+      and leaving that device. They are ideal for personal computers and small networks
+      and allow customization of security settings per device.
+    </p>
+
+    <h3>Next-Generation Firewalls (NGFW)</h3>
+    <p>
+      NGFWs combine traditional firewall features with advanced functionalities such as
+      application awareness, deep packet inspection, intrusion prevention, and threat intelligence.
+      They are widely used in modern enterprise networks to protect against sophisticated cyber threats.
+    </p>
+
+    <img src="https://sharevault.com/wp-content/uploads/2025/05/global-threat-report-2024-img-4.jpg" alt="Types of Firewalls">
+
+    <h2>Firewall Rules and Policies</h2>
+    <p>
+      Firewalls operate based on a set of rules that define which traffic is allowed
+      or blocked. Rules can be configured according to IP addresses, ports, protocols,
+      applications, or user identity. Properly defined rules are essential for security
+      without interrupting legitimate network activity.
+    </p>
+
+    <h2>Firewalls in Modern Networks</h2>
+    <p>
+      Modern networks use firewalls as part of a multi-layered security strategy. They
+      are integrated with intrusion detection systems, antivirus solutions, and cloud
+      security services to provide comprehensive protection. Firewalls are critical
+      for securing enterprise environments, cloud infrastructures, and remote access connections.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+      Firewalls are indispensable tools in network security. They monitor and filter
+      traffic, enforce policies, and prevent unauthorized access to sensitive systems.
+      Understanding how firewalls work and configuring them correctly is crucial for
+      protecting networks from cyber threats and ensuring secure communication.
+    </p>
+
+    <footer>
+      <p>Article published on Network Security Fundamentals.</p>
+    </footer>
+
+  </article>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>
