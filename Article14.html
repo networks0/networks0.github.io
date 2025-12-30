@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" sizes="32x32" href="https://i.suar.me/vpM15/m">
+    <title>networks|Article#14</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pinyon+Script&display=swap');
+        :root{
+           --thrme-color: #2fffff;
+           --base-color:#fff;
+           --theme-color:#2fffff;
+           --bg-dark:#2b2b2b;
+           --card-bg:rgba(255, 255, 255, 0.04);
+           --border:rgba(255, 251, 251, 0.08);
+            --primary: #2fffff;
+      --secondary: #00c6c6;
+      --accent: #568cff;
+      --bg: #0c2843;
+      --text: #ffffff;
+    }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body{
+            font-family: "Noto Sans", sans-serif;
+            background: rgb(43, 43, 43);
+            overflow-x: hidden;
+        }
+        nav{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            width: 95vw;
+            height: 10vh;
+            user-select: none;
+        }
+        .container{
+            width: 90%;
+            height: 8vh;
+            display: flex;
+            justify-content: center;
+            border-radius: 5px;
+        }
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            background: transparent;
+            border-radius: 5px;
+        }
+        .logo a{
+            font-family: sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            background: linear-gradient(120deg, var(--thrme-color), var(--base-color), var(--base-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition-duration: 0.5s;
+        }
+        .logo a:hover{
+            background: linear-gradient(120deg, var(--thrme-color),var(--thrme-color), var(--base-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .navbar .pages{
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .pages a{
+            position: relative;
+            color: var(--base-color);
+            text-decoration: none;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 900;
+            font-size: 1.2rem;
+            transition-duration: 0.5s;
+            letter-spacing: 1.5px;
+        }
+        .pages a:hover{
+            color: var(--thrme-color);
+        }
+        .pages a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--thrme-color);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s ease;
+}
+
+.pages a:hover::after {
+    transform: scaleX(1);
+}
+.container1 {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      color: var(--text);
+      user-select: none;
+    }
+
+    article {
+      background: var(--bg);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    h2 {
+      margin-top: 40px;
+      margin-bottom: 10px;
+      color: var(--secondary);
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
+
+    h3 {
+      margin-top: 25px;
+      color: var(--accent);
+    }
+
+    p {
+      margin: 15px 0;
+      font-size: 1rem;
+    }
+
+    ul {
+      margin: 15px 0 15px 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #e5e7eb;
+      font-size: 0.9rem;
+      color: var(--base-color);
+    }
+
+
+
+@media (max-width: 1200px){
+  article {
+        padding: 25px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+    .navbar .pages{
+            width: 80%;
+        }
+}
+@media (max-width: 768px) {
+    html, body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+    .container {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container .navbar {
+        width: 90%;
+        display: inline;
+    }
+    .container .navbar .logo{
+        display: flex;
+        justify-content: center;
+        height: 6vh;
+    }
+    .container .navbar .pages {
+        width: 90%;
+        font-size: 1em;
+    }
+    .container .navbar .pages  a{
+        font-size: 1em;
+    }
+
+
+    
+}
+ /* ===== Responsive ===== */
+    @media(max-width:768px){
+      .articles-header h1{
+        font-size:2.2rem;
+      }
+
+      .articles-header p{
+        font-size:1.05rem;
+      }
+    }
+    img{
+      position: relative;
+      max-width: 90vw;
+      width: 90%;
+      margin-left: 5%;
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="navbar">
+            <div class="logo"><a href="https://networks0.github.io/"><span>netw</span>orks</a></div>
+            <div class="pages">
+                <a href="Articles.html">Articles</a>
+                <a href="About.html">About</a>
+                <a href="Contact.html">Contact</a>
+                <a href="Privacy Policy.html">Privacy Policy</a>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+<div class="container1">
+  <article>
+
+    <h1>Cloud Networking</h1>
+
+    <img src="https://cdn.prod.website-files.com/643507075046cf6dcb169402/678a3e8619176d15adc49cfb_aws-cloud-computing-professional-67876e9d31283.webp" alt="Cloud Networking">
+
+    <p>
+      Cloud networking refers to the use of cloud-based services to manage, configure,
+      and deliver network resources and connectivity over the internet. It allows
+      organizations to scale network infrastructure dynamically, reduce operational
+      costs, and improve flexibility. Cloud networking is an essential component of
+      modern IT and enterprise strategies.
+    </p>
+
+    <h2>What Is Cloud Networking?</h2>
+    <p>
+      Cloud networking moves traditional networking services such as routing, switching,
+      firewalls, and load balancing to cloud-based platforms. This approach allows
+      IT teams to manage networks centrally, automate tasks, and deploy resources
+      quickly without relying on physical infrastructure.
+    </p>
+
+    <h2>Why Cloud Networking Is Important</h2>
+    <p>
+      Cloud networking provides several benefits over traditional networking methods.
+      It enables organizations to scale resources based on demand, deploy services
+      globally, enhance security, and reduce the complexity of managing physical
+      networks. Businesses can leverage cloud networking to support remote work,
+      IoT deployments, and hybrid IT environments.
+    </p>
+
+    <ul>
+      <li><strong>Scalability:</strong> Quickly expand or shrink network capacity as needed.</li>
+      <li><strong>Cost Efficiency:</strong> Reduces expenditure on physical hardware and maintenance.</li>
+      <li><strong>Flexibility:</strong> Access and manage network resources from anywhere.</li>
+      <li><strong>Automation:</strong> Simplifies configuration, monitoring, and optimization.</li>
+    </ul>
+
+    <h2>Components of Cloud Networking</h2>
+
+    <h3>Virtual Networks</h3>
+    <p>
+      Virtual networks provide isolated network environments within the cloud,
+      allowing multiple tenants or departments to operate independently while
+      sharing the same physical infrastructure.
+    </p>
+
+    <h3>Load Balancers</h3>
+    <p>
+      Load balancers distribute network traffic across multiple servers or instances
+      to ensure high availability, performance, and fault tolerance. They are essential
+      for managing web applications and cloud services.
+    </p>
+
+    <h3>Cloud Firewalls</h3>
+    <p>
+      Cloud firewalls provide security for cloud resources by filtering traffic,
+      enforcing security policies, and preventing unauthorized access. They protect
+      virtual networks, applications, and data in the cloud.
+    </p>
+
+    <h3>SD-WAN (Software-Defined Wide Area Network)</h3>
+    <p>
+      SD-WAN simplifies network management by using software to control traffic,
+      optimize bandwidth, and ensure secure connections between multiple locations
+      or cloud services.
+    </p>
+
+    <img src="https://b3389301.smushcdn.com/3389301/wp-content/uploads/2023/12/image-1.png?lossy=1&strip=1&webp=1" alt="Cloud Networking Components">
+
+    <h2>Benefits of Cloud Networking</h2>
+    <p>
+      Cloud networking allows organizations to be more agile, responsive, and cost-effective.
+      It reduces dependency on physical hardware, supports global connectivity, and
+      integrates seamlessly with cloud-based applications and services. Automation and
+      monitoring tools further enhance operational efficiency.
+    </p>
+
+    <h2>Cloud Networking Trends</h2>
+    <p>
+      Emerging trends in cloud networking include AI-driven network management,
+      zero-trust security models, hybrid and multi-cloud environments, and
+      advanced automation. These trends improve network performance, security,
+      and adaptability to evolving business requirements.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+      Cloud networking transforms how organizations manage and deliver network services.
+      By leveraging cloud-based infrastructure, businesses can achieve scalability,
+      flexibility, and cost savings while maintaining secure and reliable connectivity.
+      Understanding cloud networking is essential for modern IT professionals.
+    </p>
+
+    <footer>
+      <p>Article published on Cloud Networking Fundamentals.</p>
+    </footer>
+
+  </article>
+</div>
+
+
+
+</body>
+</html>
