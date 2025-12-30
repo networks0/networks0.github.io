@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" sizes="32x32" href="https://i.suar.me/vpM15/m">
+    <title>networks|Article#7</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pinyon+Script&display=swap');
+        :root{
+           --thrme-color: #2fffff;
+           --base-color:#fff;
+           --theme-color:#2fffff;
+           --bg-dark:#2b2b2b;
+           --card-bg:rgba(255, 255, 255, 0.04);
+           --border:rgba(255, 251, 251, 0.08);
+            --primary: #2fffff;
+      --secondary: #00c6c6;
+      --accent: #568cff;
+      --bg: #0c2843;
+      --text: #ffffff;
+    }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body{
+            font-family: "Noto Sans", sans-serif;
+            background: rgb(43, 43, 43);
+            overflow-x: hidden;
+        }
+        nav{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            width: 95vw;
+            height: 10vh;
+            user-select: none;
+        }
+        .container{
+            width: 90%;
+            height: 8vh;
+            display: flex;
+            justify-content: center;
+            border-radius: 5px;
+        }
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            background: transparent;
+            border-radius: 5px;
+        }
+        .logo a{
+            font-family: sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            background: linear-gradient(120deg, var(--thrme-color), var(--base-color), var(--base-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition-duration: 0.5s;
+        }
+        .logo a:hover{
+            background: linear-gradient(120deg, var(--thrme-color),var(--thrme-color), var(--base-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .navbar .pages{
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .pages a{
+            position: relative;
+            color: var(--base-color);
+            text-decoration: none;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 900;
+            font-size: 1.2rem;
+            transition-duration: 0.5s;
+            letter-spacing: 1.5px;
+        }
+        .pages a:hover{
+            color: var(--thrme-color);
+        }
+        .pages a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--thrme-color);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s ease;
+}
+
+.pages a:hover::after {
+    transform: scaleX(1);
+}
+.container1 {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      color: var(--text);
+      user-select: none;
+    }
+
+    article {
+      background: var(--bg);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    h2 {
+      margin-top: 40px;
+      margin-bottom: 10px;
+      color: var(--secondary);
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
+
+    h3 {
+      margin-top: 25px;
+      color: var(--accent);
+    }
+
+    p {
+      margin: 15px 0;
+      font-size: 1rem;
+    }
+
+    ul {
+      margin: 15px 0 15px 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #e5e7eb;
+      font-size: 0.9rem;
+      color: var(--base-color);
+    }
+
+
+
+@media (max-width: 1200px){
+  article {
+        padding: 25px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+    .navbar .pages{
+            width: 80%;
+        }
+}
+@media (max-width: 768px) {
+    html, body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+    .container {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container .navbar {
+        width: 90%;
+        display: inline;
+    }
+    .container .navbar .logo{
+        display: flex;
+        justify-content: center;
+        height: 6vh;
+    }
+    .container .navbar .pages {
+        width: 90%;
+        font-size: 1em;
+    }
+    .container .navbar .pages  a{
+        font-size: 1em;
+    }
+
+
+    
+}
+ /* ===== Responsive ===== */
+    @media(max-width:768px){
+      .articles-header h1{
+        font-size:2.2rem;
+      }
+
+      .articles-header p{
+        font-size:1.05rem;
+      }
+    }
+    img{
+      position: relative;
+      max-width: 90vw;
+      width: 90%;
+      margin-left: 5%;
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="navbar">
+            <div class="logo"><a href="https://networks0.github.io/"><span>netw</span>orks</a></div>
+            <div class="pages">
+                <a href="Articles.html">Articles</a>
+                <a href="About.html">About</a>
+                <a href="Contact.html">Contact</a>
+                <a href="Privacy Policy.html">Privacy Policy</a>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+<div class="container1">
+  <article>
+
+    <h1>IP Addressing</h1>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Network_Address_Translation_%28NAT%29.png" alt="IP Addressing Diagram">
+
+    <p>
+      IP addressing is a fundamental concept in computer networking that allows devices
+      to identify and communicate with each other across networks. Every device connected
+      to a network, whether it is a computer, smartphone, server, or IoT device, must have
+      a unique IP address. Without IP addressing, data would have no destination, making
+      network communication impossible.
+    </p>
+
+    <h2>What Is an IP Address?</h2>
+    <p>
+      An IP address, or Internet Protocol address, is a numerical identifier assigned
+      to each device on a network. It serves two main purposes: identifying the host
+      and locating it within the network. IP addresses enable routers to forward data
+      packets to the correct destination by following logical addressing rules.
+    </p>
+
+    <h2>Why IP Addressing Is Important</h2>
+    <p>
+      IP addressing is essential because it ensures accurate and efficient data delivery.
+      It allows networks to scale from small local environments to the global internet.
+      Proper IP addressing also plays a key role in network security, traffic management,
+      and troubleshooting.
+    </p>
+
+    <ul>
+      <li><strong>Device Identification:</strong> Uniquely identifies each network device.</li>
+      <li><strong>Routing:</strong> Enables data to reach the correct destination.</li>
+      <li><strong>Scalability:</strong> Supports growth of networks.</li>
+      <li><strong>Network Management:</strong> Simplifies monitoring and control.</li>
+    </ul>
+
+    <h2>Types of IP Addresses</h2>
+
+    <h3>IPv4</h3>
+    <p>
+      IPv4 is the fourth version of the Internet Protocol and the most widely used.
+      It uses a 32-bit address format, resulting in approximately 4.3 billion unique
+      addresses. Due to the rapid growth of internet-connected devices, IPv4 addresses
+      have become scarce, leading to the development of IPv6.
+    </p>
+
+    <h3>IPv6</h3>
+    <p>
+      IPv6 was introduced to solve the address exhaustion problem of IPv4. It uses
+      a 128-bit address format, providing an almost unlimited number of unique addresses.
+      IPv6 also improves security, routing efficiency, and support for modern networking
+      technologies.
+    </p>
+
+    <h2>Public and Private IP Addresses</h2>
+    <p>
+      Public IP addresses are used to identify devices on the internet and are assigned
+      by Internet Service Providers. Private IP addresses are used within local networks
+      and are not directly accessible from the internet. Network Address Translation (NAT)
+      allows multiple private devices to share a single public IP address.
+    </p>
+
+    <h2>Static vs Dynamic IP Addresses</h2>
+    <p>
+      Static IP addresses remain constant and are typically used for servers and network
+      devices that require consistent accessibility. Dynamic IP addresses are assigned
+      automatically by DHCP servers and may change over time, making them suitable for
+      client devices such as laptops and smartphones.
+    </p>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/IPv4-vs-IPv6-graphic.png" alt="IPv4 vs IPv6">
+
+    <h2>IP Addressing in Modern Networks</h2>
+    <p>
+      Modern networks often use a combination of IPv4 and IPv6 to ensure compatibility
+      and future readiness. Cloud computing, mobile networks, and IoT systems rely
+      heavily on efficient IP addressing to manage millions of connected devices.
+      Proper planning and implementation are critical for network stability and performance.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+      IP addressing is the foundation of all network communication. By understanding
+      how IP addresses work, including IPv4, IPv6, and address types, network professionals
+      can design scalable, secure, and efficient networks. Mastery of IP addressing is
+      essential for anyone involved in networking or information technology.
+    </p>
+
+    <footer>
+      <p>Article published on Network Fundamentals.</p>
+    </footer>
+
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
