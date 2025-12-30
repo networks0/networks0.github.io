@@ -335,39 +335,7 @@
 
     </div>
   </section>
-  <input id="code" placeholder="Enter code">
-<button onclick="send()">Submit</button>
-<p id="result"></p>
-
-<script>
-async function send() {
-  const code = document.getElementById("code").value.trim();
-
-  try {
-    const res = await fetch(
-      "https://lucky-glade-5474.taki84123.workers.dev/",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ code })
-      }
-    );
-
-    const data = await res.json();
-    document.getElementById("result").textContent = data.message;
-  } catch (e) {
-    document.getElementById("result").textContent = "Connection error";
-    console.error(e);
-  }
-}
-</script>
-
-
-
-
-
+  
 
 </body>
 </html>
