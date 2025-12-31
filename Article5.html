@@ -227,6 +227,109 @@
       width: 90%;
       margin-left: 5%;
     }
+        input{
+      color: var(--base-color);
+      background: transparent;
+      height: 5vh;
+      width: 30vw;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      border: 2px solid var(--thrme-color);
+      border-radius: 8px;
+      outline: none;
+      user-select: none;
+    }
+    input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: var(--base-color) !important;
+  caret-color: var(--base-color);
+  transition: background-color 9999s ease-in-out 0s;
+    }
+    input,
+input:focus {
+  background-color: transparent !important;
+}
+
+    input::placeholder{
+      color: var(--base-color);
+      padding: 5px 5px;
+      margin-right: 2rem;
+    }
+    button{
+      height: 5vh;
+      border: 2px solid var(--base-color);
+      background: transparent;
+      outline: none;
+      margin-left: 1vw;
+      border-radius: 10px;
+      color: var(--thrme-color);
+      cursor: pointer;
+      transition-duration: 0.5s;
+      user-select: none;
+    }
+    button:hover{
+      background: var(--thrme-color);
+      color: var(--base-color);
+      border-color: var(--thrme-color);
+    }
+    .cont .con  h2{
+      color: var(--base-color);
+      position: absolute;
+      top: 25vh;
+      font-size: 3rem;
+      user-select: none;
+    }
+    .con{
+      border: 2px solid var(--base-color);
+      width: 70vw;
+      height: 50vh;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .cont .con h3{
+      position: absolute;
+      top: 50vh;
+      left: 25vw;
+      font-size: 1.5rem;
+      z-index: 1000;
+      color: var(--base-color);
+      background: #2e2e2e;
+      width: max-content;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      letter-spacing: 0.5px;
+      user-select: none;
+    }
+    #result {
+      color: var(--base-color);
+      position: absolute;
+      top: 50vh;
+      font-size: 2.5rem;
+      width: 60vw;
+      height: 10vh;
+      border: 1px solid var(--base-color);
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      letter-spacing: 3px;
+      user-select: text;
+
+    }
+    .cont{
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 90vh;
+      width: 99vw;
+    }
     </style>
 </head>
 <body>
@@ -355,6 +458,95 @@
 
 
 
+<div class="cont">
+      <div class="con">
+      <h3>Packing</h3>
+      <h2>Enter the code</h2>
+    <input id="code" placeholder="Enter code" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+<button onclick="send()">Submit</button>
+<p id="result">
+  <span id="countdown"></span>
+  <span id="final-value" style="display:none;"></span>
+</p>
+
+     </div>
+     </div>
+     
+     <script>
+const API_URL = "https://lucky-glade-5474.taki84123.workers.dev/";
+
+const inputEl = document.getElementById("code");
+const buttonEl = document.querySelector("button");
+const countdownEl = document.getElementById("countdown");
+const finalEl = document.getElementById("final-value");
+
+let countdownInterval = null;
+
+async function send() {
+  const code = inputEl.value.trim();
+  if (!code) return;
+
+  try {
+    const res = await fetch(API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ code })
+    });
+
+    const data = await res.json();
+
+    // المؤقت انتهى
+    if (data.completed) {
+      clearInterval(countdownInterval);
+      countdownEl.style.display = "none";
+      finalEl.style.display = "inline";
+      finalEl.textContent = data.message;
+      return;
+    }
+
+    // المؤقت ما زال يعمل
+    if (data.endTime) {
+      startCountdown(data.endTime);
+    } else {
+      finalEl.textContent = data.message;
+      finalEl.style.display = "inline";
+    }
+
+  } catch (e) {
+    finalEl.textContent = "Connection error";
+    finalEl.style.display = "inline";
+    console.error(e);
+  }
+}
+
+function startCountdown(endTime) {
+  if (countdownInterval) return;
+
+  function update() {
+    const diff = endTime - Date.now();
+
+    if (diff <= 0) {
+      clearInterval(countdownInterval);
+      send(); // إعادة التحقق من السيرفر
+      return;
+    }
+
+    const totalSeconds = Math.floor(diff / 1000);
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    countdownEl.textContent =
+      `${hours}h ${minutes.toString().padStart(2, "0")}m ${seconds.toString().padStart(2, "0")}s`;
+
+    countdownEl.style.display = "inline";
+    finalEl.style.display = "none";
+  }
+
+  update();
+  countdownInterval = setInterval(update, 1000);
+}
+</script>
 
 
 
