@@ -330,6 +330,27 @@ input:focus {
       height: 90vh;
       width: 99vw;
     }
+
+        .cont1{ 
+      display: inline;
+      justify-content: center;
+      align-items: center;
+      font-family: system-ui; 
+      text-align: center; 
+      color: var(--base-color);
+      padding: 40px; 
+    }
+    .timer { 
+      font-size: 2rem; 
+      margin: 20px 0; 
+    }
+    .done { 
+      color: green; 
+      font-size: 1.4rem; 
+    }
+    .waiting { 
+      color: #9d9d9d; 
+    }
     </style>
 </head>
 <body>
@@ -457,7 +478,13 @@ input:focus {
 
      </div>
      </div>
-     
+
+    <div class="cont1">
+      <h1>العدّاد التنازلي</h1>
+  <div id="status" class="waiting">جاري التحقق…</div>
+  <div id="timer" class="timer">-- : -- : -- : --</div>
+     </div>
+    
      <script>
 const API_URL = "https://lucky-glade-5474.taki84123.workers.dev/";
 
@@ -535,6 +562,60 @@ function startCountdown(endTime) {
 </script>
 
 
+    <script>
+    const API_UR = "https://square-haze-05f8.taki84123.workers.dev/"; // رابط الـ Worker
+    const SECRET_CODE = "X9A7-cod";
+
+    let sendTime = null;
+    let interval = null;
+
+    async function checkServer() {
+      const res = await fetch(API_UR, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ code: SECRET_CODE })
+      });
+
+      const data = await res.json();
+
+      if (data.completed) {
+        clearInterval(interval);
+        document.getElementById("status").textContent = "تم الوصول للموعد";
+        document.getElementById("status").className = "done";
+        document.getElementById("timer").textContent = data.message;
+        return;
+      }
+
+      sendTime = data.sendTime;
+      document.getElementById("status").textContent = data.message;
+      startCountdown();
+    }
+
+    function startCountdown() {
+      if (interval) return;
+
+      interval = setInterval(() => {
+        const now = Date.now();
+        const diff = sendTime - now;
+
+        if (diff <= 0) {
+          clearInterval(interval);
+          checkServer(); // إعادة التحقق عند الصفر
+          return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        document.getElementById("timer").textContent =
+          `${days}d : ${hours}h : ${minutes}m : ${seconds}s`;
+      }, 1000);
+    }
+
+    checkServer();
+  </script>
 
 
 
