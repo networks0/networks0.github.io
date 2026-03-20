@@ -1,0 +1,107 @@
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #d4d4d4;
+	background: none;
+	font-family: Consolas, Monaco, 'Fira Code', monospace;
+	font-size: 1em;
+	line-height: 1.6;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 10px;
+	background: #1e1e2f;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .2em .4em;
+	border-radius: 6px;
+	background: #2a2a40;
+}
+
+/* Comments */
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #6a9955;
+	font-style: italic;
+}
+
+/* Punctuation */
+.token.punctuation {
+	color: #d4d4d4;
+}
+
+/* Tags & HTML */
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+	color: #00a4f6;
+}
+
+/* Functions */
+.token.function-name,
+.token.function {
+	color: #dcdcaa;
+}
+
+/* Numbers & Booleans */
+.token.boolean,
+.token.number {
+	color: #b5cea8;
+}
+
+/* Properties & Classes */
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+	color: #4ec9b0;
+}
+
+/* Keywords */
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+	color: #c586c0;
+}
+
+/* Strings */
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+	color: #ce9178;
+}
+
+/* Operators */
+.token.operator,
+.token.entity,
+.token.url {
+	color: #d4d4d4;
+}
+
+/* Bold & Italic */
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+/* Inserted */
+.token.inserted {
+	color: #27c93f;
+}
