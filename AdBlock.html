@@ -2100,53 +2100,83 @@
     </div>
   </div>
 <script>
-  (function () {
+(function () {
 
-    function detectAdBlock(callback) {
-      let bait = document.createElement("div");
-      bait.className = "adsbox ad-banner ad-unit";
-      bait.style.cssText = "height:1px;width:1px;position:absolute;left:-999px;";
-      document.body.appendChild(bait);
-
-      setTimeout(() => {
-        let blocked = bait.offsetHeight === 0;
-        bait.remove();
-        callback(blocked);
-      }, 120);
-    }
-
-    function showBanner() {
-      const banner = document.getElementById("adblock-banner");
-      banner.classList.add("show");
-    }
-
-    function hideBanner() {
-      document.getElementById("adblock-banner").classList.remove("show");
-      localStorage.setItem("abDismissed", "1");
-    }
-
-    // تشغيل بعد تحميل الصفحة
-    window.addEventListener("load", () => {
-
-      if (localStorage.getItem("abDismissed")) return;
-
-      detectAdBlock((isBlocked) => {
-        if (isBlocked) showBanner();
-      });
-
-    });
-
-    // أزرار
-    document.getElementById("ab-help").onclick = () => {
-      alert(`لتعطيل مانع الإعلانات:
-1- اضغط على أيقونة AdBlock
-2- اختر: Don't run on this site
-3- أعد تحميل الصفحة`);
+  function detectAdBlockAdvanced(callback) {
+    let tests = {
+      bait: false,
+      adsbygoogle: false,
+      scriptBlocked: false
     };
 
-    document.getElementById("ab-continue").onclick = hideBanner;
+    let done = 0;
+    function checkDone() {
+      done++;
+      if (done === 3) {
+        // إذا واحد منهم تحقق = AdBlock مفعل
+        callback(tests.bait || tests.adsbygoogle || tests.scriptBlocked);
+      }
+    }
 
-  })();
+    // 🟢 Test 1: bait element
+    let bait = document.createElement("div");
+    bait.className = "adsbox ad-banner ad-unit ad-container";
+    bait.style.cssText = "height:1px;width:1px;position:absolute;left:-999px;";
+    document.body.appendChild(bait);
+
+    setTimeout(() => {
+      if (bait.offsetHeight === 0 || bait.clientHeight === 0) {
+        tests.bait = true;
+      }
+      bait.remove();
+      checkDone();
+    }, 150);
+
+    // 🟢 Test 2: adsbygoogle
+    setTimeout(() => {
+      try {
+        if (!window.adsbygoogle || window.adsbygoogle.length === 0) {
+          tests.adsbygoogle = true;
+        }
+      } catch (e) {
+        tests.adsbygoogle = true;
+      }
+      checkDone();
+    }, 200);
+
+    // 🟢 Test 3: تحميل سكريبت Google Ads
+    let script = document.createElement("script");
+    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+
+    script.onload = () => {
+      tests.scriptBlocked = false;
+      checkDone();
+    };
+
+    script.onerror = () => {
+      tests.scriptBlocked = true;
+      checkDone();
+    };
+
+    document.head.appendChild(script);
+  }
+
+  function showBanner() {
+    document.getElementById("adblock-banner")?.classList.add("show");
+  }
+
+  window.addEventListener("load", () => {
+    detectAdBlockAdvanced((blocked) => {
+      if (blocked) {
+        console.log("AdBlock detected ✅");
+        showBanner();
+      } else {
+        console.log("No AdBlock ❌");
+      }
+    });
+  });
+
+})();
 </script>
 </body>
 
